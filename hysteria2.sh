@@ -556,17 +556,17 @@ update_core(){
 }
 
 menu() {
-    clear
-    echo -e  
-    echo -e                     ${RED}Hysteria 2 一键安装脚本${PLAIN}                   
-    echo -e    ${GREEN}改动者:  1118论坛魔改版                                            
-    echo -e    ${GREEN}原作者:  Misaka                                               
-    echo -e    ${GREEN}GitHub 原项目: https://github.com/Misaka-blog                 
-    echo -e    ${GREEN}GitLab 本项目: https://gitlab.com/Yzh666/                     
-    echo -e    ${GREEN}Telegram 频道: telegram仅供捐助者加入                          
-    echo -e    ${GREEN}Telegram 群组: 待定                                               
-    echo -e    ${GREEN}YouTube 频道: https://www.youtube.ccom/@1118luntan            
-    echo 
+     clear
+    echo "#############################################################"
+    echo -e "#                  ${RED}Hysteria 2 一键安装脚本${PLAIN}                  #"
+    echo -e "# ${GREEN}改动${PLAIN}: 1118luntan.top                                      #"
+    echo -e "# ${GREEN}教程${PLAIN}: wiki.1118luntan.top/#/docs/g-1                      #"
+    echo -e "# ${GREEN}GitHub 项目${PLAIN}: https://github.com/yzh118                    #"
+    echo -e "# ${GREEN}原作者:${PLAIN} Misaka                                            #"
+    echo -e "# ${GREEN}Telegram 频道${PLAIN}: https://t.me/dsjaqpjbfzsl                  #"
+    echo -e "# ${GREEN}Telegram 群组${PLAIN}: 待定                                       #"
+    echo -e "# ${GREEN}YouTube 频道${PLAIN}: https://www.youtube.com/@1118luntan         #"
+    echo "#############################################################"
     echo ""
     echo -e " ${GREEN}1.${PLAIN} 安装 Hysteria 2"
     echo -e " ${GREEN}2.${PLAIN} ${RED}卸载 Hysteria 2${PLAIN}"
