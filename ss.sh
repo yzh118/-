@@ -587,6 +587,7 @@ menu() {
     echo -e "# ${GREEN}改动者${PLAIN}: 1118luntan                                        #"
     echo -e "# ${GREEN}教程网址${PLAIN}: https://wiki.1118luntan.top                     #"
     echo -e "# ${GREEN}论坛${PLAIN}: https://1118luntan.top                              #"
+    echo -e "# ${GREEN}原作者${PLAIN}：tizi.blog                                         #"
     echo "#############################################################"
     echo ""
 
