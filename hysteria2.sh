@@ -39,7 +39,7 @@ for ((int = 0; int < ${#REGEX[@]}; int++)); do
     [[ $(echo "$SYS" | tr '[:upper:]' '[:lower:]') =~ ${REGEX[int]} ]] && SYSTEM="${RELEASE[int]}" && [[ -n $SYSTEM ]] && break
 done
 
-[[ -z $SYSTEM ]] && red "目前暂不支持你的VPS的操作系统！" && exit 1
+[[ -z $SYSTEM ]] && red "不支持你的VPS的操作系统！" && exit 1
 
 if [[ -z $(type -P curl) ]]; then
     if [[ ! $SYSTEM == "CentOS" ]]; then
