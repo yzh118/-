@@ -383,9 +383,9 @@ rules:
   - GEOIP,CN,DIRECT
   - MATCH,Proxy
 EOF
-    url="hysteria2://$auth_pwd@$last_ip:$last_port/?insecure=1&sni=$hy_domain#Misaka-Hysteria2"
+    url="hysteria2://$auth_pwd@$last_ip:$last_port/?insecure=1&sni=$hy_domain#hy2一键脚本搭建的节点"
     echo $url > /root/hy/url.txt
-    nohopurl="hysteria2://$auth_pwd@$last_ip:$port/?insecure=1&sni=$hy_domain#Misaka-Hysteria2"
+    nohopurl="hysteria2://$auth_pwd@$last_ip:$port/?insecure=1&sni=$hy_domain#hy2一键脚本搭建的节点"
     echo $nohopurl > /root/hy/url-nohop.txt
 
     systemctl daemon-reload
@@ -563,8 +563,8 @@ menu() {
     echo -e "# ${GREEN}教程${PLAIN}: wiki.1118luntan.top/#/docs/g-1                      #"
     echo -e "# ${GREEN}GitHub 项目${PLAIN}: https://github.com/yzh118                    #"
     echo -e "# ${GREEN}原作者:${PLAIN} Misaka                                            #"
-    echo -e "# ${GREEN}Telegram 频道${PLAIN}: https://t.me/dsjaqpjbfzsl                  #"
-    echo -e "# ${GREEN}Telegram 群组${PLAIN}: 待定                                       #"
+    echo -e "# ${GREEN}Telegram 频道${PLAIN}: https://t.me/a1118luntan                   #"
+    echo -e "# ${GREEN}Telegram 群组${PLAIN}: https://t.me/one118lt                      #"
     echo -e "# ${GREEN}YouTube 频道${PLAIN}: https://www.youtube.com/@1118luntan         #"
     echo "#############################################################"
     echo ""
