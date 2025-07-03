@@ -405,6 +405,17 @@ EOF
     yellow "Clash Meta 客户端配置文件已保存到 /root/hy/clash-meta.yaml"
     yellow "Hysteria 2 节点分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url.txt)"
+    # 新增：输出二维码链接
+    url=$(cat /root/hy/url.txt)
+    qr_api="https://api.8-8-8-8.top/qrcode"
+    api_key="Yzh1118luntan"
+    qr_url=$(curl -s -X POST -F "text=$url" -F "apikey=$api_key" "$qr_api" | grep -o 'https://api.8-8-8-8.top/qrcodes/[0-9]*.svg')
+    if [ -n "$qr_url" ]; then
+        yellow "二维码链接如下："
+        green "$qr_url"
+    else
+        red "二维码API调用失败，未获取到二维码链接"
+    fi
     yellow "Hysteria 2 节点单端口的分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url-nohop.txt)"
 }
@@ -544,6 +555,17 @@ showconf(){
     yellow "Clash Meta 客户端配置文件已保存到 /root/hy/clash-meta.yaml"
     yellow "Hysteria 2 节点分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url.txt)"
+    # 新增：输出二维码链接
+    url=$(cat /root/hy/url.txt)
+    qr_api="https://api.8-8-8-8.top/qrcode"
+    api_key="Yzh1118luntan"
+    qr_url=$(curl -s -X POST -F "text=$url" -F "apikey=$api_key" "$qr_api" | grep -o 'https://api.8-8-8-8.top/qrcodes/[0-9]*.svg')
+    if [ -n "$qr_url" ]; then
+        yellow "二维码链接如下："
+        green "$qr_url"
+    else
+        red "二维码API调用失败，未获取到二维码链接"
+    fi
     yellow "Hysteria 2 节点单端口的分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url-nohop.txt)"
 }
@@ -557,27 +579,25 @@ update_core(){
 
 menu() {
      clear
-    echo "#############################################################"
-    echo -e "#                  ${RED}Hysteria 2 一键安装脚本${PLAIN}                  #"
-    echo -e "# ${GREEN}改动${PLAIN}: 1118luntan.top                                      #"
-    echo -e "# ${GREEN}教程${PLAIN}: wiki.1118luntan.top/#/docs/g-1                      #"
-    echo -e "# ${GREEN}GitHub 项目${PLAIN}: https://github.com/yzh118                    #"
-    echo -e "# ${GREEN}原作者:${PLAIN} Misaka                                            #"
-    echo -e "# ${GREEN}Telegram 频道${PLAIN}: https://t.me/a1118luntan                   #"
-    echo -e "# ${GREEN}Telegram 群组${PLAIN}: https://t.me/one118lt                      #"
-    echo -e "# ${GREEN}YouTube 频道${PLAIN}: https://www.youtube.com/@1118luntan         #"
-    echo "#############################################################"
+    echo "=================================="
+    echo -e "${RED}Hysteria 2 一键安装脚本${PLAIN}"
+    echo -e "${GREEN}原作者:${PLAIN} Misaka"
+    echo -e "${GREEN}改进：${PLAIN} 1118luntan.top"
+    echo -e "${GREEN}Telegram 频道${PLAIN}: https://t.me/a1118luntan"
+    echo -e "${GREEN}Telegram 群组${PLAIN}: https://t.me/one118lt"
+    echo -e "${GREEN}YouTube 频道${PLAIN}: https://www.youtube.com/@1118luntan"
+    echo "=================================="
     echo ""
-    echo -e " ${GREEN}1.${PLAIN} 安装 Hysteria 2"
-    echo -e " ${GREEN}2.${PLAIN} ${RED}卸载 Hysteria 2${PLAIN}"
+    echo -e " ${GREEN}1.${PLAIN} 安装"
+    echo -e " ${GREEN}2.${PLAIN} ${RED}卸载${PLAIN}"
     echo " -------------"
-    echo -e " ${GREEN}3.${PLAIN} 关闭、开启、重启 Hysteria 2"
-    echo -e " ${GREEN}4.${PLAIN} 修改 Hysteria 2 配置"
-    echo -e " ${GREEN}5.${PLAIN} 显示 Hysteria 2 配置文件"
+    echo -e " ${GREEN}3.${PLAIN} 关闭、开启、重启"
+    echo -e " ${GREEN}4.${PLAIN} 修改配置"
+    echo -e " ${GREEN}5.${PLAIN} 显示配置"
     echo " -------------"
     echo -e " ${GREEN}6.${PLAIN} 更新 Hysteria 2 内核"
     echo " -------------"
-    echo -e " ${GREEN}0.${PLAIN} 退出脚本"
+    echo -e " ${GREEN}0.${PLAIN} 退出"
     echo ""
     read -rp "请输入选项 [0-5]: " menuInput
     case $menuInput in
