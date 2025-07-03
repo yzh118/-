@@ -405,17 +405,6 @@ EOF
     yellow "Clash Meta 客户端配置文件已保存到 /root/hy/clash-meta.yaml"
     yellow "Hysteria 2 节点分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url.txt)"
-    # 新增：输出二维码链接
-    url=$(cat /root/hy/url.txt)
-    qr_api="https://api.8-8-8-8.top/qrcode"
-    api_key="Yzh1118luntan"
-    qr_url=$(curl -s -X POST -F "text=$url" -F "apikey=$api_key" "$qr_api" | grep -o 'https://api.8-8-8-8.top/qrcodes/[0-9]*.svg')
-    if [ -n "$qr_url" ]; then
-        yellow "二维码链接如下："
-        green "$qr_url"
-    else
-        red "二维码API调用失败，未获取到二维码链接"
-    fi
     yellow "Hysteria 2 节点单端口的分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url-nohop.txt)"
 }
@@ -555,17 +544,6 @@ showconf(){
     yellow "Clash Meta 客户端配置文件已保存到 /root/hy/clash-meta.yaml"
     yellow "Hysteria 2 节点分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url.txt)"
-    # 新增：输出二维码链接
-    url=$(cat /root/hy/url.txt)
-    qr_api="https://api.8-8-8-8.top/qrcode"
-    api_key="Yzh1118luntan"
-    qr_url=$(curl -s -X POST -F "text=$url" -F "apikey=$api_key" "$qr_api" | grep -o 'https://api.8-8-8-8.top/qrcodes/[0-9]*.svg')
-    if [ -n "$qr_url" ]; then
-        yellow "二维码链接如下："
-        green "$qr_url"
-    else
-        red "二维码API调用失败，未获取到二维码链接"
-    fi
     yellow "Hysteria 2 节点单端口的分享链接如下，并保存到 /root/hy/url.txt"
     red "$(cat /root/hy/url-nohop.txt)"
 }
